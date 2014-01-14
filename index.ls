@@ -14,7 +14,7 @@ module.exports = class Delegator
 
 	for let type, fun in {getter: (-> &0[&1] = &2), setter: -> &0[&1]}
 		::[type] = ->
-			@[type]push it
+			@"#{type}s"push it
 			@proto"__define#{ucfirst type}__" it, (,) -> fun @target, it, ...&
 
 ucfirst = -> it.0.toUpperCase! + it.slice 1

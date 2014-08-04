@@ -7,7 +7,7 @@ module.exports = class Delegator
 
 	method: ->
 		@methods.push it
-		@proto[it] = @target~[name]
+		@proto[it] = @target~[it]
 		@
 
 	access: -> @getter it .setter it
